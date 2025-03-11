@@ -85,6 +85,7 @@ import { WeddingBackgroundComponent } from './wedding-background/wedding-backgro
       }
 
       .content-container {
+        opacity: 0;
         display: flex;
         flex-direction: column;
         align-items: center;

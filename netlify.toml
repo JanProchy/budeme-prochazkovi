@@ -1,6 +1,6 @@
 [build]
 publish = "dist/budeme-prochazkovi/browser"
-command = "npx ng build --configuration production"
+command = "npm ci && npx ng build --configuration production"
 [[redirects]]
 from = "/*"
 to = "/index.html"

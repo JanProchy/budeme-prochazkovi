@@ -1,7 +1,9 @@
 [build]
-publish = "dist/budeme-prochazkovi/browser"
-command = "npm ci && npx ng build --configuration production"
+  publish = "dist/budeme-prochazkovi/browser"
+  command = "npm ci && npx ng build --configuration production"
+[build.environment]
+  NODE_VERSION = "18"
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200

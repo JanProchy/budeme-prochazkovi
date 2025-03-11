@@ -1,1 +1,125 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.background-drawing {
+  opacity: 1;
+  scale: 1;
+  transition: opacity 2s cubic-bezier(0.76, 0, 0.24, 1),
+    scale 2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.content-container {
+  opacity: 0;
+  scale: 0.95;
+  transition: opacity 2s cubic-bezier(0.76, 0, 0.24, 1),
+    scale 2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+body.content-loaded .background-drawing {
+  opacity: 0.03;
+  scale: 0.95;
+  animation: pulse 5s ease-in-out infinite alternate 2s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.03;
+    scale: 0.95;
+  }
+  100% {
+    opacity: 0.09;
+    scale: 0.96;
+  }
+}
+
+body.content-loaded .content-container {
+  opacity: 1;
+  scale: 1;
+}
+
+:root:has(body.dark-mode) {
+  #color-theme-icon {
+    color: #7afbd6 !important;
+  }
+
+  .background-drawing {
+    filter: invert(0);
+  }
+  html,
+  body,
+  input,
+  textarea,
+  select,
+  button,
+  dialog {
+    background-color: var(--darkreader-background-ffffff, #181a1b);
+  }
+  a {
+    color: var(--darkreader-text-0040ff, #3391ff);
+  }
+
+  ::placeholder {
+    color: var(--darkreader-text-a9a9a9, #b2aba1);
+  }
+  * {
+    scrollbar-color: var(--darkreader-background-b0b0b0, #454a4d)
+      var(--darkreader-background-f1f1f1, #202324);
+  }
+
+  /* Modified CSS */
+  .title {
+    color: var(--darkreader-text-047857, #7afbd6) !important;
+  }
+  .subtitle {
+    color: var(--darkreader-text-059669, #65facc) !important;
+  }
+  .date {
+    color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
+  }
+  .event-card {
+    background-color: var(
+      --darkreader-background-ffffffb3,
+      rgba(24, 26, 27, 0.7)
+    ) !important;
+    box-shadow: var(--darkreader-background-0000001a, rgba(0, 0, 0, 0.1)) 0px
+      4px 6px -1px !important;
+
+    border-top: 1px solid rgba(101, 250, 203, 0.05);
+  }
+  .event-card h2 {
+    color: var(--darkreader-text-047857, #7afbd6) !important;
+  }
+  .event-card p {
+    color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
+  }
+  .rsvp-button {
+    background-color: var(--darkreader-background-047857, #036046) !important;
+    border-color: initial;
+    border-style: none;
+    border-width: initial;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+  }
+  .rsvp-button:hover {
+    background-color: var(--darkreader-background-065f46, #054c38) !important;
+  }
+  .leaf:nth-child(2n + 1) {
+    color: var(--darkreader-text-37b565, #59cd83) !important;
+  }
+  .leaf:nth-child(2n) {
+    color: var(--darkreader-text-4ade80, #55e088) !important;
+  }
+  .background-gradient {
+    background-color: initial;
+    background-image: linear-gradient(
+      var(--darkreader-background-ecfdf5, #063a27),
+      var(--darkreader-background-ffffff, #181a1b) 70%
+    ) !important;
+  }
+  .particle {
+    background-color: var(--darkreader-background-a1e1c0, #1e5f46) !important;
+  }
+}

@@ -1,11 +1,5 @@
-import { CommonModule, DOCUMENT } from '@angular/common';
-import {
-  afterRender,
-  AfterViewInit,
-  Component,
-  inject,
-  signal,
-} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { afterRender, AfterViewInit, Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LightDarkSwitcherComponent } from './light-dark-switcher/light-dark-switcher.component';
 import { WeddingBackgroundComponent } from './wedding-background/wedding-background.component';
@@ -191,15 +185,13 @@ import { WeddingBackgroundComponent } from './wedding-background/wedding-backgro
 export class AppComponent implements AfterViewInit {
   title = 'Budeme Procházkovi!';
 
-  document = inject(DOCUMENT);
-
   themeDetected = signal(false);
 
   constructor() {
     afterRender(() => {
       if (window.matchMedia && this.themeDetected() === false) {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          this.document.body.classList.add('dark-mode');
+          document.body.classList.add('dark-mode');
         }
         this.themeDetected.set(true);
       }
@@ -208,7 +200,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      this.document.body.classList.add('content-loaded');
-    }, 1000);
+      document.body.classList.add('content-loaded');
+    }, 1_500);
   }
 }

@@ -3,6 +3,7 @@ import { afterRender, AfterViewInit, Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LightDarkSwitcherComponent } from './light-dark-switcher/light-dark-switcher.component';
 import { WeddingBackgroundComponent } from './wedding-background/wedding-background.component';
+import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { WeddingBackgroundComponent } from './wedding-background/wedding-backgro
     RouterModule,
     WeddingBackgroundComponent,
     LightDarkSwitcherComponent,
+    ContactDialogComponent,
   ],
   template: `
     <app-wedding-background></app-wedding-background>
@@ -32,27 +34,59 @@ import { WeddingBackgroundComponent } from './wedding-background/wedding-backgro
         <div class="event-cards">
           <div class="event-card">
             <h2>Kde</h2>
-            <p>Penzion Pluhův Žďár</p>
-            <p>Mapa zde.</p>
-            <p>informace o parkování</p>
+            <p>Pluhův Žďár</p>
+            <p>Penzion u Zámku</p>
+            <a href="https://maps.app.goo.gl/HPpjzqGzX5128tsYA" target="_blank"
+              >Odkaz na mapu</a
+            >
           </div>
 
           <div class="event-card">
-            <h2>Kdy</h2>
-            <p>16. srpna 2025 od 10 hodin</p>
-            <p>Obřad od 12 hodin.</p>
+            <h2>Harmonogram</h2>
+            <p><span class="time-span">9:30 - 10:30</span> — Příjezd hostů</p>
+            <p><span class="time-span">11:00</span> — Obřad</p>
+            <p><span class="time-span">12:30</span> — Společný oběd</p>
+            <p><span class="time-span">16:00</span> — Krájení dortu s kávou</p>
+            <p>
+              <span class="time-span">17:00</span> — První novomanželský tanec
+            </p>
+            <p><span class="time-span">18:30</span> — Raut</p>
+            <p><span class="time-span">22:00</span> — Tanec s prskavkami</p>
           </div>
 
           <div class="event-card">
             <h2>Jídelníček</h2>
-            <p>12:00 - Vývar & guláš</p>
-            <p>13:00 - Slivovice</p>
+            <p>Bude doplněno</p>
+
+            <h2>Ostatní</h2>
+            <p>Dresscode</p>
+            <ul>
+              <li>Zelená</li>
+              <li>Eucalyptus & Šalvěj</li>
+            </ul>
+            <p>Dary</p>
+            <ul>
+              <li>Už máme jeden druhého, to nám stačí :-)</li>
+              <li>Nejvděčnější budeme za obálky</li>
+            </ul>
           </div>
         </div>
 
-        <button class="rsvp-button">Zanechat vzkaz</button>
+        <button class="rsvp-button" (click)="dialogOpen.set(true)">
+          Zanechat vzkaz
+        </button>
+
+        <p class="contact-us">
+          Pokud máte nějaké dotazy, neváhejte se na nás obrátit.<br />
+          <a href="mailto:jan.prochy@gmail.com">jan.prochy&#64;gmail.com</a>
+        </p>
       </div>
     </main>
+
+    <app-contact-dialog
+      [opened]="dialogOpen()"
+      (close)="dialogOpen.set(false)"
+    ></app-contact-dialog>
   `,
   styles: [
     `
@@ -90,7 +124,7 @@ import { WeddingBackgroundComponent } from './wedding-background/wedding-backgro
         flex-direction: column;
         align-items: center;
         padding: 4rem 1rem;
-        max-width: 64rem;
+        max-width: 65rem;
         margin: 0 auto;
       }
 
@@ -142,21 +176,21 @@ import { WeddingBackgroundComponent } from './wedding-background/wedding-backgro
         }
       }
 
-      .rsvp-button {
-        background-color: #047857;
-        color: white;
-        font-weight: 700;
-        padding: 0.75rem 2rem;
-        border-radius: 9999px;
-        font-size: 1.125rem;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.2s;
+      // .rsvp-button {
+      //   background-color: #047857;
+      //   color: white;
+      //   font-weight: 700;
+      //   padding: 0.75rem 2rem;
+      //   border-radius: 9999px;
+      //   font-size: 1.125rem;
+      //   border: none;
+      //   cursor: pointer;
+      //   transition: background-color 0.2s;
 
-        &:hover {
-          background-color: #065f46;
-        }
-      }
+      //   &:hover {
+      //     background-color: #065f46;
+      //   }
+      // }
 
       @media (min-width: 768px) {
         .spacer.top {
@@ -187,6 +221,8 @@ export class AppComponent implements AfterViewInit {
   title = 'Budeme Procházkovi!';
 
   themeDetected = signal(false);
+
+  dialogOpen = signal(false);
 
   constructor() {
     afterRender(() => {

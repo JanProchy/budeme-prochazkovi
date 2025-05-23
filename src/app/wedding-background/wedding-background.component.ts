@@ -1,23 +1,9 @@
-import {
-  animate,
-  keyframes,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import {
-  type AfterViewInit,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
-  type ElementRef,
-  inject,
-  type OnDestroy,
   type OnInit,
   signal,
-  ViewChild,
 } from '@angular/core';
 
 interface Leaf {

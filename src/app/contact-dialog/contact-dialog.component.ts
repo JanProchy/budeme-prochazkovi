@@ -37,12 +37,12 @@ import { Component, computed, input, output, signal } from '@angular/core';
             <div class="buttons">
               <button
                 type="button"
-                class="rsvp-button secondary"
+                class="button secondary"
                 (click)="close.emit()"
               >
                 Zavřít
               </button>
-              <button type="submit" class="rsvp-button" [disabled]="loading()">
+              <button type="submit" class="button" [disabled]="loading()">
                 Odeslat
               </button>
             </div>
@@ -52,7 +52,7 @@ import { Component, computed, input, output, signal } from '@angular/core';
           <div class="thank-you">
             <h2>Děkujeme za vzkaz!</h2>
             <p>Vaše zpráva byla úspěšně odeslána.</p>
-            <button class="rsvp-button" (click)="close.emit()">Zavřít</button>
+            <button class="button" (click)="close.emit()">Zavřít</button>
           </div>
         </ng-template>
       </div>

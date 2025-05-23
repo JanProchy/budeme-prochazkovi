@@ -34,8 +34,9 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         <div class="event-cards">
           <div class="event-card">
             <h2>Kde</h2>
-            <p>Pluhův Žďár</p>
-            <p>Penzion u Zámku</p>
+            <p>Penzion u Zámku,</p>
+            <p>Pluhův Žďár 1,</p>
+            <p>378 24, Pluhův Žďár</p>
             <a href="https://maps.app.goo.gl/HPpjzqGzX5128tsYA" target="_blank"
               >Odkaz na mapu</a
             >
@@ -72,7 +73,7 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
           </div>
         </div>
 
-        <button class="rsvp-button" (click)="dialogOpen.set(true)">
+        <button class="button contact-us-button" (click)="dialogOpen.set(true)">
           Zanechat vzkaz
         </button>
 
@@ -171,26 +172,25 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
           text-align: center;
           margin-top: 0;
         }
-        p {
+        p,
+        ul,
+        a {
           color: #064e3b;
         }
       }
 
-      // .rsvp-button {
-      //   background-color: #047857;
-      //   color: white;
-      //   font-weight: 700;
-      //   padding: 0.75rem 2rem;
-      //   border-radius: 9999px;
-      //   font-size: 1.125rem;
-      //   border: none;
-      //   cursor: pointer;
-      //   transition: background-color 0.2s;
+      .contact-us {
+        color: #064e3b;
+        text-align: center;
+        line-height: 1.5;
+        a {
+          color: #064e3b;
+        }
+      }
 
-      //   &:hover {
-      //     background-color: #065f46;
-      //   }
-      // }
+      .contact-us-button {
+        margin-bottom: 1rem;
+      }
 
       @media (min-width: 768px) {
         .spacer.top {
@@ -224,16 +224,16 @@ export class AppComponent implements AfterViewInit {
 
   dialogOpen = signal(false);
 
-  constructor() {
-    afterRender(() => {
-      if (window.matchMedia && this.themeDetected() === false) {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.body.classList.add('dark-mode');
-        }
-        this.themeDetected.set(true);
-      }
-    });
-  }
+  // constructor() {
+  //   afterRender(() => {
+  //     if (window.matchMedia && this.themeDetected() === false) {
+  //       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //         document.body.classList.add('dark-mode');
+  //       }
+  //       this.themeDetected.set(true);
+  //     }
+  //   });
+  // }
 
   ngAfterViewInit(): void {
     setTimeout(() => {

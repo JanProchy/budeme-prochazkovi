@@ -1,6 +1,4 @@
 * {
-  // margin: 0;
-  // padding: 0;
   box-sizing: border-box;
 }
 
@@ -45,6 +43,27 @@ body.content-loaded .background-drawing {
 body.content-loaded .content-container {
   opacity: 1;
   scale: 1;
+}
+
+.button {
+  background-color: #047857;
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #065f46;
+  }
+
+  &.secondary {
+    background-color: transparent !important;
+    color: #065f46;
+  }
 }
 
 :root:has(body.dark-mode) {
@@ -99,46 +118,33 @@ body.content-loaded .content-container {
     h2 {
       color: var(--darkreader-text-047857, #7afbd6) !important;
     }
-    p {
-      color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
-    }
+    p,
+    ul,
     a {
-      color: var(--darkreader-text-064e3b, #e8e6e3) !important;
+      color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
     }
   }
 
   .contact-us {
     color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
-    text-align: center;
-    line-height: 1.5;
     a {
       color: var(--darkreader-text-064e3b, #e8e6e3) !important;
     }
   }
 
-  .rsvp-button {
-    font-weight: 700;
-    padding: 0.75rem 2rem;
-    border-radius: 9999px;
-    font-size: 1.125rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
+  .button {
     background-color: var(--darkreader-background-047857, #036046) !important;
     border-color: initial;
     border-style: none;
     border-width: initial;
     color: var(--darkreader-text-ffffff, #e8e6e3) !important;
-    margin-bottom: 1rem;
 
     &.secondary {
       background-color: transparent !important;
-      padding: 0.75rem;
     }
   }
 
-  .rsvp-button:hover {
+  .button:hover {
     background-color: var(--darkreader-background-065f46, #054c38) !important;
   }
   .leaf:nth-child(2n + 1) {
@@ -156,5 +162,25 @@ body.content-loaded .content-container {
   }
   .particle {
     background-color: var(--darkreader-background-a1e1c0, #1e5f46) !important;
+  }
+
+  .leaves-container {
+    background: radial-gradient(
+      ellipse at top center,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(0, 0, 0, 0) 30%
+    );
+  }
+
+  .dialog {
+    background: #222 !important;
+    color: #fff !important;
+  }
+
+  .contact-form textarea,
+  .contact-form input {
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
   }
 }

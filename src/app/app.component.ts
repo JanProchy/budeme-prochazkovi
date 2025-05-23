@@ -79,7 +79,9 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
 
         <p class="contact-us">
           Pokud máte nějaké dotazy, neváhejte se na nás obrátit.<br />
-          <a href="mailto:jan.prochy@gmail.com">jan.prochy&#64;gmail.com</a>
+          <a href="mailto:jan.prochy@gmail.com?subject=Svatba"
+            >jan.prochy&#64;gmail.com</a
+          >
         </p>
       </div>
     </main>
@@ -224,16 +226,16 @@ export class AppComponent implements AfterViewInit {
 
   dialogOpen = signal(false);
 
-  // constructor() {
-  //   afterRender(() => {
-  //     if (window.matchMedia && this.themeDetected() === false) {
-  //       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  //         document.body.classList.add('dark-mode');
-  //       }
-  //       this.themeDetected.set(true);
-  //     }
-  //   });
-  // }
+  constructor() {
+    afterRender(() => {
+      if (window.matchMedia && this.themeDetected() === false) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark-mode');
+        }
+        this.themeDetected.set(true);
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {

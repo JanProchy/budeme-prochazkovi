@@ -38,21 +38,40 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
             <p>Pluhův Žďár 1</p>
             <p>378 24 Pluhův Žďár</p>
             <a href="https://maps.app.goo.gl/HPpjzqGzX5128tsYA" target="_blank"
-              >Odkaz na mapu</a
-            >
+              >Odkaz na mapu
+            </a>
           </div>
 
           <div class="event-card">
             <h2>Plán dne</h2>
-            <p><span class="time-span">do 10:30</span> — Příjezd hostů</p>
-            <p><span class="time-span">11:00</span> — Obřad</p>
-            <p><span class="time-span">12:30</span> — Společný oběd</p>
-            <p><span class="time-span">16:00</span> — Krájení dortu s kávou</p>
             <p>
-              <span class="time-span">17:00</span> — První novomanželský tanec
+              <span>do 10:30</span>&nbsp;
+              <span class="dash">—</span>&nbsp;Příjezd hostů
             </p>
-            <p><span class="time-span">18:30</span> — Raut</p>
-            <p><span class="time-span">22:00</span> — Tanec s prskavkami</p>
+            <p>
+              <span class="time-span">11:00</span>&nbsp;
+              <span class="dash">—</span>&nbsp;Obřad
+            </p>
+            <p>
+              <span class="time-span">12:30</span>&nbsp;
+              <span class="dash">—</span>&nbsp;Společný oběd
+            </p>
+            <p>
+              <span class="time-span">16:00</span>&nbsp;
+              <span class="dash">—</span>&nbsp;Krájení dortu s kávou
+            </p>
+            <p>
+              <span class="time-span">17:00</span>&nbsp;
+              <span class="dash">—</span>&nbsp;První novomanželský tanec
+            </p>
+            <p>
+              <span class="time-span">18:30</span>&nbsp;
+              <span class="dash">—</span>&nbsp;Raut
+            </p>
+            <p>
+              <span class="time-span">22:00</span>&nbsp;
+              <span class="dash">—</span>&nbsp;Tanec s prskavkami
+            </p>
           </div>
 
           <div class="event-card">
@@ -98,11 +117,13 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         </button>
 
         <p class="contact-us">
-          — nebo —<br />
-          <a href="mailto:evillinhe@gmail.com?subject=Svatba"
-            >evillinhe&#64;gmail.com</a
-          >
+          <span class="dash">—</span>&nbsp; <span class="or">nebo</span>&nbsp;
+          <span class="dash">—</span>
+          <br />
         </p>
+        <a href="mailto:evillinhe@gmail.com?subject=Svatba"
+          >evillinhe&#64;gmail.com</a
+        >
       </div>
     </main>
 
@@ -201,18 +222,20 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         }
       }
 
+      .time-span {
+        width: 2.2rem;
+        display: inline-block;
+      }
+
       .contact-us,
       .about-wedding {
         color: #064e3b;
         text-align: center;
         line-height: 1.5;
-        a {
-          color: #064e3b;
-        }
       }
 
-      .contact-us {
-        margin-top: 0.5rem;
+      a {
+        color: #064e3b;
       }
 
       h3 {
@@ -227,6 +250,11 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
       .about-wedding {
         max-width: 45rem;
         margin-bottom: 3rem;
+      }
+
+      .or {
+        font-size: 0.8rem;
+        opacity: 0.8;
       }
 
       @media (min-width: 768px) {
@@ -270,6 +298,13 @@ export class AppComponent implements AfterViewInit {
         this.themeDetected.set(true);
       }
     });
+
+    const style =
+      'background-color: green; color: white; border: 5px solid lime; font-size: 2em; padding-inline: 1rem;';
+    console.log(
+      "%cHezky! Zajdi za námi na svatbě s kódem 'IDDQD' a dostaneš panáka zdarma!",
+      style
+    );
   }
 
   ngAfterViewInit(): void {

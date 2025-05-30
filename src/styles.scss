@@ -74,6 +74,11 @@ label,
   color: rgb(66, 136, 71);
 }
 
+.dash,
+.contact-us {
+  color: rgb(66, 136, 71);
+}
+
 #soup,
 #main-course,
 #for-children,
@@ -140,16 +145,21 @@ label,
     }
   }
 
-  .contact-us,
+  a {
+    color: white;
+  }
+
   .about-wedding,
-  h3 {
+  h3,
+  .contact-us {
     color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
     a {
       color: var(--darkreader-text-064e3b, #e8e6e3) !important;
     }
   }
   label,
-  .label {
+  .label,
+  .dash {
     color: #7afbd6;
   }
 

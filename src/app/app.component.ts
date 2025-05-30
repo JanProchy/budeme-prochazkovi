@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { afterRender, AfterViewInit, Component, signal } from '@angular/core';
+import {
+  afterEveryRender,
+  AfterViewInit,
+  Component,
+  signal,
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LightDarkSwitcherComponent } from './light-dark-switcher/light-dark-switcher.component';
 import { WeddingBackgroundComponent } from './wedding-background/wedding-background.component';
@@ -291,7 +296,7 @@ export class AppComponent implements AfterViewInit {
   dialogOpen = signal(false);
 
   constructor() {
-    afterRender(() => {
+    afterEveryRender(() => {
       if (window.matchMedia && this.themeDetected() === false) {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
           document.body.classList.add('dark-mode');

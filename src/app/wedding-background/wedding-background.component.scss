@@ -84,16 +84,9 @@
 }
 
 .background-gradient {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: linear-gradient(to bottom, #ecfdf5, white);
   background-repeat: no-repeat;
   opacity: 0.7;
 }
-
-// .background-pattern {
-//   position: absolute;
-//   inset: 0;
-//   opacity: 0.002;
-
-// }

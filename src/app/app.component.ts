@@ -90,7 +90,7 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
           uvedený mail, nebo můžete zanechat vzkaz.<br /><br />
 
           Moc vám děkujeme a už se nemůžeme dočkat, až s vámi oslavíme náš velký
-          den!
+          den!<br /><span class="heart-emoji">💚</span>
         </p>
 
         <button class="button contact-us-button" (click)="dialogOpen.set(true)">
@@ -211,14 +211,22 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         }
       }
 
+      .contact-us {
+        margin-top: 0.5rem;
+      }
+
       h3 {
         font-weight: 400;
         color: #064e3b;
       }
 
+      .heart-emoji {
+        font-size: 1.5rem;
+      }
+
       .about-wedding {
         max-width: 45rem;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
       }
 
       @media (min-width: 768px) {

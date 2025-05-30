@@ -34,8 +34,7 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         <div class="event-cards">
           <div class="event-card">
             <h2>Místo svatby</h2>
-            <!-- <h2>Kde si řekneme „Ano“</h2> -->
-            <p>Penzion u Zámku,</p>
+            <p>Penzion U Zámku,</p>
             <p>Pluhův Žďár 1,</p>
             <p>378 24, Pluhův Žďár</p>
             <a href="https://maps.app.goo.gl/HPpjzqGzX5128tsYA" target="_blank"
@@ -221,10 +220,6 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
       .about-wedding {
         max-width: 45rem;
         margin-bottom: 4rem;
-      }
-
-      .contact-us-button {
-        // margin-bottom: 1rem;
       }
 
       @media (min-width: 768px) {

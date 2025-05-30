@@ -256,6 +256,8 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
       .about-wedding {
         max-width: 45rem;
         margin-bottom: 3rem;
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
       }
 
       .or {

@@ -43,7 +43,7 @@ import { Component, computed, input, output, signal } from '@angular/core';
                 Zavřít
               </button>
               <button type="submit" class="button" [disabled]="loading()">
-                Odeslat
+                @if(loading()) { Odesílání... } @else { Odeslat }
               </button>
             </div>
           </form>
@@ -52,7 +52,9 @@ import { Component, computed, input, output, signal } from '@angular/core';
           <div class="thank-you">
             <h2>Děkujeme za vzkaz!</h2>
             <p>Vaše zpráva byla úspěšně odeslána.</p>
-            <button class="button" (click)="close.emit()">Zavřít</button>
+            <button class="button" (click)="close.emit(); sent.set(false)">
+              Zavřít
+            </button>
           </div>
         </ng-template>
       </div>

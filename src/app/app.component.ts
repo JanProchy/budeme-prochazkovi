@@ -33,7 +33,8 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
 
         <div class="event-cards">
           <div class="event-card">
-            <h2>Kde</h2>
+            <h2>Místo svatby</h2>
+            <!-- <h2>Kde si řekneme „Ano“</h2> -->
             <p>Penzion u Zámku,</p>
             <p>Pluhův Žďár 1,</p>
             <p>378 24, Pluhův Žďár</p>
@@ -43,8 +44,8 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
           </div>
 
           <div class="event-card">
-            <h2>Harmonogram</h2>
-            <p><span class="time-span">9:30 - 10:30</span> — Příjezd hostů</p>
+            <h2>Plán dne</h2>
+            <p><span class="time-span">do 10:30</span> — Příjezd hostů</p>
             <p><span class="time-span">11:00</span> — Obřad</p>
             <p><span class="time-span">12:30</span> — Společný oběd</p>
             <p><span class="time-span">16:00</span> — Krájení dortu s kávou</p>
@@ -56,31 +57,52 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
           </div>
 
           <div class="event-card">
-            <h2>Jídelníček</h2>
-            <p>Bude doplněno</p>
+            <h2>Menu</h2>
+            <span class="label">Polévka</span>
+            <p id="soup">Svatební vývar</p>
 
-            <h2>Ostatní</h2>
-            <p>Dresscode</p>
-            <ul>
-              <li>Zelená</li>
-              <li>Eucalyptus & Šalvěj</li>
-            </ul>
-            <p>Dary</p>
-            <ul>
-              <li>Už máme jeden druhého, to nám stačí :-)</li>
-              <li>Nejvděčnější budeme za obálky</li>
-            </ul>
+            <span class="label">Hlavní chod</span>
+            <p id="main-course">
+              Vepřová panenka se štouchaným bramborem a grilovanou zeleninou
+            </p>
+
+            <span class="label">Pro děti</span>
+            <p id="main-course">
+              Kuřecí plátek se štouchaným bramborem a grilovanou zeleninou
+            </p>
+
+            <span class="label">Večeře</span>
+            <p id="supper">Raut</p>
           </div>
         </div>
+
+        <h3>Milí svatebčané,</h3>
+        <p class="about-wedding">
+          Jestli si snad někdo se svatebním darem hlavu láme, potom vězte, že my
+          dva už v domácnosti všechno máme. Potěší nás ale příspěvěk v jakékoliv
+          výši, který nám náš rozpočet do budoucna zvýší.<br /><br />
+
+          Rádi bychom, abyste věděli, že barva naší svatby je
+          <strong>zelená</strong>, konkrétně v odstínech eukalyptu. Pokud se
+          chcete k tomuto barevnému ladění připojit, budeme moc rádi! Není to
+          ale žádná povinnost, hlavně si přejeme, abyste si náš svatební den
+          užili.<br /><br />
+          Potvrďte prosím Vaši účast, počet osob a zájem o přespání na níže
+          uvedený mail, nebo zanechte vzkaz.<br /><br />
+
+          Moc Vám děkujeme a už se nemůžeme dočkat, až s Vámi oslavíme náš velký
+          den!
+        </p>
 
         <button class="button contact-us-button" (click)="dialogOpen.set(true)">
           Zanechat vzkaz
         </button>
 
         <p class="contact-us">
-          Pokud máte nějaké dotazy, neváhejte se na nás obrátit.<br />
-          <a href="mailto:jan.prochy@gmail.com?subject=Svatba"
-            >jan.prochy&#64;gmail.com</a
+          — nebo —<br />
+          <!-- Pokud máte nějaké dotazy, neváhejte se na nás obrátit.<br /> -->
+          <a href="mailto:evillinhe@gmail.com?subject=Svatba"
+            >evillinhe&#64;gmail.com</a
           >
         </p>
       </div>
@@ -181,7 +203,8 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         }
       }
 
-      .contact-us {
+      .contact-us,
+      .about-wedding {
         color: #064e3b;
         text-align: center;
         line-height: 1.5;
@@ -190,8 +213,18 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         }
       }
 
+      h3 {
+        font-weight: 400;
+        color: #064e3b;
+      }
+
+      .about-wedding {
+        max-width: 45rem;
+        margin-bottom: 4rem;
+      }
+
       .contact-us-button {
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
       }
 
       @media (min-width: 768px) {

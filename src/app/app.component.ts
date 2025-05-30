@@ -34,9 +34,9 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         <div class="event-cards">
           <div class="event-card">
             <h2>Místo svatby</h2>
-            <p>Penzion U Zámku,</p>
-            <p>Pluhův Žďár 1,</p>
-            <p>378 24, Pluhův Žďár</p>
+            <p>Penzion U Zámku</p>
+            <p>Pluhův Žďár 1</p>
+            <p>378 24 Pluhův Žďár</p>
             <a href="https://maps.app.goo.gl/HPpjzqGzX5128tsYA" target="_blank"
               >Odkaz na mapu</a
             >
@@ -78,18 +78,18 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
         <h3>Milí svatebčané,</h3>
         <p class="about-wedding">
           Jestli si snad někdo se svatebním darem hlavu láme, potom vězte, že my
-          dva už v domácnosti všechno máme. Potěší nás ale příspěvěk v jakékoliv
+          dva už v domácnosti všechno máme. Potěší nás ale příspěvek v jakékoliv
           výši, který nám náš rozpočet do budoucna zvýší.<br /><br />
 
           Rádi bychom, abyste věděli, že barva naší svatby je
           <strong>zelená</strong>, konkrétně v odstínech eukalyptu. Pokud se
           chcete k tomuto barevnému ladění připojit, budeme moc rádi! Není to
-          ale žádná povinnost, hlavně si přejeme, abyste si náš svatební den
+          však žádná povinnost, hlavně si přejeme, abyste si náš svatební den
           užili.<br /><br />
-          Potvrďte prosím Vaši účast, počet osob a zájem o přespání na níže
-          uvedený mail, nebo zanechte vzkaz.<br /><br />
+          Potvrďte prosím vaši účast, počet osob a zájem o přespání na níže
+          uvedený mail, nebo můžete zanechat vzkaz.<br /><br />
 
-          Moc Vám děkujeme a už se nemůžeme dočkat, až s Vámi oslavíme náš velký
+          Moc vám děkujeme a už se nemůžeme dočkat, až s vámi oslavíme náš velký
           den!
         </p>
 

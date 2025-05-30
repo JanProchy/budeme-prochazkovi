@@ -203,6 +203,7 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
 
       .event-card {
         background-color: rgba(255, 255, 255, 0.7);
+        border-top: 1px solid rgb(55 181 101 / 25%);
         padding: 1.5rem;
         border-radius: 0.5rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);

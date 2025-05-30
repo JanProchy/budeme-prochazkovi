@@ -99,7 +99,6 @@ import { ContactDialogComponent } from './contact-dialog/contact-dialog.componen
 
         <p class="contact-us">
           — nebo —<br />
-          <!-- Pokud máte nějaké dotazy, neváhejte se na nás obrátit.<br /> -->
           <a href="mailto:evillinhe@gmail.com?subject=Svatba"
             >evillinhe&#64;gmail.com</a
           >

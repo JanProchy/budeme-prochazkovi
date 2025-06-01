@@ -1,6 +1,6 @@
 # Budeme Procházkovi
 
-![Angular](https://img.shields.io/badge/Angular-20.0.0-red?logo=angular)  [![Netlify Status](https://api.netlify.com/api/v1/badges/14e3a8cc-4003-438a-bca5-d40f9301d10f/deploy-status)](https://app.netlify.com/projects/budeme-prochazkovi/deploys)
+![Angular](https://img.shields.io/badge/Angular-20.0.0-red?logo=angular)  [![Netlify Status](https://api.netlify.com/api/v1/badges/14e3a8cc-4003-438a-bca5-d40f9301d10f/deploy-status)](https://app.netlify.com/projects/budeme-prochazkovi/deploys) ![Lighthouse Performance](https://budemeprochazkovi.cz/assets/lighthouse_performance.svg) ![Lighthouse Accessibility](https://budemeprochazkovi.cz/assets/lighthouse_accessibility.svg) ![Lighthouse Best Practices](https://budemeprochazkovi.cz/assets/lighthouse_best-practices.svg) ![Lighthouse SEO](https://budemeprochazkovi.cz/assets/lighthouse_seo.svg)
 
 A modern wedding website built with Angular.
 

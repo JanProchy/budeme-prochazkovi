@@ -1,0 +1,16 @@
+{
+  "name": "Budeme Prochazkovi",
+  "short_name": "budeme-prochazkovi",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "gcm_sender_id": "635400757513"
+}

@@ -17,11 +17,11 @@ body {
 }
 
 .content-container {
+  opacity: 0;
   @include flex(column);
   padding: map.get($spacing, xxl) map.get($spacing, md);
   max-width: $page-max-width;
   margin: 0 auto;
-  opacity: 0;
   scale: 0.95;
   transition: opacity map.get($transitions, main),
     scale map.get($transitions, main);

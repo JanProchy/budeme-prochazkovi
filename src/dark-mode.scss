@@ -1,0 +1,131 @@
+@use "variables" as *;
+
+:root:has(body.dark-mode) {
+  #color-theme-icon {
+    color: $color-accent !important;
+  }
+
+  .background-drawing {
+    filter: invert(0);
+  }
+  html,
+  body,
+  input,
+  textarea,
+  select,
+  button,
+  dialog {
+    background: $color-bg-dark !important;
+    background-color: $color-bg-dark !important;
+    color: $color-text-light !important;
+  }
+  a {
+    color: $color-text-light !important;
+  }
+
+  ::placeholder {
+    color: $color-placeholder !important;
+  }
+  * {
+    scrollbar-color: $scrollbar-thumb $scrollbar-track;
+  }
+
+  .title,
+  .subtitle,
+  .date,
+  .event-card,
+  .event-card h2,
+  .event-card p,
+  .about-wedding,
+  h3,
+  .contact-us {
+    color: $color-text-light !important;
+  }
+
+  label,
+  .label,
+  .dash {
+    color: $color-accent !important;
+  }
+
+  .title {
+    color: $color-accent !important;
+  }
+  .subtitle {
+    color: $color-accent !important; // Updated from $color-accent-light
+  }
+  .date {
+    color: $color-text-light !important;
+  }
+  .event-card {
+    background-color: $color-event-card-bg-dark !important;
+    border-top: 1px solid rgba(101, 250, 203, 0.05);
+    color: $color-text-light !important;
+    h2 {
+      color: $color-accent !important;
+    }
+    p,
+    ul,
+    a {
+      color: $color-text-light !important;
+    }
+  }
+
+  .about-wedding,
+  h3,
+  .contact-us {
+    color: $color-text-light !important;
+    a {
+      color: $color-text-light !important;
+    }
+  }
+
+  .button {
+    background-color: $color-accent-dark !important;
+    border-color: initial;
+    border-style: none;
+    border-width: initial;
+    color: $color-text-light !important;
+    &.secondary {
+      background-color: transparent !important;
+    }
+  }
+
+  .button:hover {
+    background-color: $color-text-dark !important; // Updated from $color-primary-dark
+  }
+  .leaf:nth-child(2n + 1) {
+    color: $color-leaf-odd !important;
+  }
+  .leaf:nth-child(2n) {
+    color: $color-leaf-even !important;
+  }
+  .background-gradient {
+    background-color: initial;
+    background-image: $color-bg-gradient-dark !important;
+  }
+  .particle {
+    background-color: #1e5f46 !important;
+  }
+
+  .leaves-container {
+    background: radial-gradient(
+      ellipse at top center,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(0, 0, 0, 0) 30%
+    );
+    background-repeat: no-repeat;
+  }
+
+  .dialog {
+    background: $color-dialog-bg !important;
+    color: $color-dialog-text !important;
+  }
+
+  .contact-form textarea,
+  .contact-form input {
+    background: $color-dark-form-field-bg !important;
+    color: $color-text-light !important;
+    border: 1px solid $color-border !important;
+  }
+}

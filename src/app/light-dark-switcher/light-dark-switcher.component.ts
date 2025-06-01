@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-light-dark-switcher',
   imports: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './light-dark-switcher.component.html',
   styles: [
     `

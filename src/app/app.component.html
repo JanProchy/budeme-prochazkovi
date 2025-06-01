@@ -1,0 +1,114 @@
+<app-wedding-background></app-wedding-background>
+
+<main class="wedding-content">
+  <div class="theme-switcher">
+    <app-light-dark-switcher></app-light-dark-switcher>
+  </div>
+
+  <div class="spacer top"></div>
+  <div class="content-container">
+    <h1 class="title">Natálie & Jan</h1>
+
+    <p class="subtitle">budeme Procházkovi!</p>
+
+    <div class="date">16. srpna 2025</div>
+
+    <div class="event-cards">
+      <div class="event-card">
+        <h2>Místo svatby</h2>
+        <p>Penzion U Zámku</p>
+        <p>Pluhův Žďár 1</p>
+        <p>378 24 Pluhův Žďár</p>
+        <a href="https://maps.app.goo.gl/HPpjzqGzX5128tsYA" target="_blank"
+          >Odkaz na mapu
+        </a>
+      </div>
+
+      <div class="event-card">
+        <h2>Plán dne</h2>
+        <p>
+          <span>do 10:30</span>&nbsp; <span class="dash">—</span>&nbsp;Příjezd
+          hostů
+        </p>
+        <p>
+          <span class="time-span">11:00</span>&nbsp;
+          <span class="dash">—</span>&nbsp;Obřad
+        </p>
+        <p>
+          <span class="time-span">12:30</span>&nbsp;
+          <span class="dash">—</span>&nbsp;Společný oběd
+        </p>
+        <p>
+          <span class="time-span">16:00</span>&nbsp;
+          <span class="dash">—</span>&nbsp;Krájení dortu s kávou
+        </p>
+        <p>
+          <span class="time-span">17:00</span>&nbsp;
+          <span class="dash">—</span>&nbsp;První novomanželský tanec
+        </p>
+        <p>
+          <span class="time-span">18:30</span>&nbsp;
+          <span class="dash">—</span>&nbsp;Raut
+        </p>
+        <p>
+          <span class="time-span">22:00</span>&nbsp;
+          <span class="dash">—</span>&nbsp;Tanec s prskavkami
+        </p>
+      </div>
+
+      <div class="event-card">
+        <h2>Menu</h2>
+        <span class="label">Polévka</span>
+        <p class="meal-name">Svatební vývar</p>
+
+        <span class="label">Hlavní chod</span>
+        <p class="meal-name">
+          Vepřová panenka se štouchaným bramborem a grilovanou zeleninou
+        </p>
+
+        <span class="label">Pro děti</span>
+        <p class="meal-name">
+          Kuřecí plátek se štouchaným bramborem a grilovanou zeleninou
+        </p>
+
+        <span class="label">Večeře</span>
+        <p class="meal-name">Raut</p>
+      </div>
+    </div>
+
+    <h3>Milí svatebčané,</h3>
+    <p class="about-wedding">
+      Jestli si snad někdo se svatebním darem hlavu láme, potom vězte, že my dva
+      už v domácnosti všechno máme. Potěší nás ale příspěvek v jakékoliv výši,
+      který nám náš rozpočet do budoucna zvýší.<br /><br />
+
+      Rádi bychom, abyste věděli, že barva naší svatby je
+      <strong>zelená</strong>, konkrétně v odstínech eukalyptu. Pokud se chcete
+      k tomuto barevnému ladění připojit, budeme moc rádi! Není to však žádná
+      povinnost, hlavně si přejeme, abyste si náš svatební den užili.<br /><br />
+      Potvrďte prosím vaši účast, počet osob a zájem o přespání na níže uvedený
+      mail, nebo můžete zanechat vzkaz.<br /><br />
+
+      Moc vám děkujeme a už se nemůžeme dočkat, až s vámi oslavíme náš velký
+      den!<br /><span class="heart-emoji">💚</span>
+    </p>
+
+    <button class="button contact-us-button" (click)="dialogOpen.set(true)">
+      Zanechat vzkaz
+    </button>
+
+    <p class="contact-us">
+      <span class="dash">—</span>&nbsp; <span class="or">nebo</span>&nbsp;
+      <span class="dash">—</span>
+      <br />
+    </p>
+    <a href="mailto:evillinhe@gmail.com?subject=Svatba"
+      >evillinhe&#64;gmail.com</a
+    >
+  </div>
+</main>
+
+<app-contact-dialog
+  [opened]="dialogOpen()"
+  (close)="dialogOpen.set(false)"
+></app-contact-dialog>

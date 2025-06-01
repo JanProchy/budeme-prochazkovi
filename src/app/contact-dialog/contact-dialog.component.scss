@@ -1,9 +1,12 @@
+@use "sass:map";
+@use "../../_variables" as *;
+
 .dialog-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
-  z-index: 1000;
+  z-index: map.get($z-indexes, dialog);
 }
 
 .dialog {
@@ -11,46 +14,72 @@
   top: 50%;
   left: 50%;
   width: 90vw;
-  max-width: 500px;
+  max-width: $contact-us-dialog-max-width;
   background: white;
-  color: #064e3b;
-  border-radius: 1rem;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: $color-text-dark;
+  border-radius: map.get($radiuses, lg);
+  padding: map.get($spacing, lg) map.get($spacing, md-l);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   transform: translate(-50%, -50%);
-  z-index: 1001;
+  z-index: map.get($z-indexes, dialog);
+
+  .dialog-content {
+    width: 100%;
+  }
+
+  .thank-you {
+    text-align: center;
+
+    h2 {
+      color: $color-accent;
+      margin-bottom: map.get($spacing, md);
+    }
+
+    p {
+      color: $color-text;
+      margin-bottom: map.get($spacing, md);
+    }
+  }
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  @include flex(column, top, stretch);
+  gap: map.get($spacing, md);
+
+  label {
+    display: block;
+    color: $color-contact;
+    font-size: map.get($font-sizes, label);
+    text-transform: uppercase;
+  }
 
   h2 {
     margin: 0;
   }
-}
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-
-  button {
-    font-size: 0.8rem;
-    margin-bottom: 0;
+  textarea,
+  input {
+    width: 100%;
+    margin-top: map.get($spacing, xs);
+    border-radius: map.get($radiuses, md);
+    border: 1px solid $color-border;
+    background: white;
+    color: $color-text;
+    padding: map.get($spacing, sm);
+    font-family: $font-main;
+    font-size: map.get($font-sizes, base);
   }
-}
 
-.contact-form textarea,
-.contact-form input {
-  width: 100%;
-  margin-top: 0.3rem;
-  border-radius: 0.3rem;
-  border: 1px solid #444;
-  padding: 0.5rem;
-  font-size: large;
-}
+  .input {
+    margin-bottom: map.get($spacing, md);
+  }
 
-.contact-form textarea {
-  resize: vertical;
+  .buttons {
+    @include flex(row, space-between);
+    gap: map.get($spacing, sm);
+
+    button {
+      font-size: map.get($font-sizes, dialog-button) !important;
+    }
+  }
 }

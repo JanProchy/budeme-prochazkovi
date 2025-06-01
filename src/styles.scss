@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "variables" as *;
+@use "dark-mode" as *;
+
 * {
   box-sizing: border-box;
 }
@@ -6,22 +10,17 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-}
-
-.background-drawing {
-  opacity: 1;
-  scale: 1;
-  transition: opacity 2s cubic-bezier(0.76, 0, 0.24, 1),
-    scale 2s cubic-bezier(0.76, 0, 0.24, 1);
+  font-family: $font-main;
+  font-size: map.get($font-sizes, base);
+  background: $color-bg-gradient;
+  min-height: 100vh;
 }
 
 .content-container {
   opacity: 0;
   scale: 0.95;
-  transition: opacity 2s cubic-bezier(0.76, 0, 0.24, 1),
-    scale 2s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: opacity map.get($transitions, main),
+    scale map.get($transitions, main);
 }
 
 body.content-loaded .background-drawing {
@@ -47,172 +46,171 @@ body.content-loaded .content-container {
 }
 
 .button {
-  background-color: #047857;
-  color: white;
+  background-color: $color-primary;
+  color: $color-text-light;
   font-weight: 700;
-  padding: 0.75rem 2rem;
-  border-radius: 9999px;
-  font-size: 1.125rem;
+  padding: map.get($spacing, sm) map.get($spacing, lg);
+  border-radius: map.get($radiuses, pill);
+  font-size: map.get($font-sizes, button);
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color map.get($transitions, fast);
 
   &:hover {
-    background-color: #065f46;
+    background-color: $color-text-dark; // Updated from $color-primary-dark
   }
 
   &.secondary {
     background-color: transparent !important;
-    color: #065f46;
+    color: $color-text-dark; // Updated from $color-primary-dark
   }
 }
 
 label,
 .label {
   text-transform: uppercase;
-  font-size: 0.65rem;
-  color: rgb(66, 136, 71);
+  font-size: map.get($font-sizes, label);
+  color: $color-contact;
 }
 
 .dash,
 .contact-us {
-  color: rgb(66, 136, 71);
+  color: $color-contact;
 }
 
-#soup,
-#main-course,
-#for-children,
-#supper {
+.meal-name {
   margin-top: 0;
 }
 
-:root:has(body.dark-mode) {
-  #color-theme-icon {
-    color: #7afbd6 !important;
-  }
+.wedding-content {
+  @include flex(column);
+  min-height: 100vh;
+  position: relative;
+  flex-wrap: wrap;
+  z-index: map.get($z-indexes, content);
+}
 
-  .background-drawing {
-    filter: invert(0);
+.spacer {
+  &.top {
+    height: $top-mobile-spacer-height;
   }
-  html,
-  body,
-  input,
-  textarea,
-  select,
-  button,
-  dialog {
-    background-color: var(--darkreader-background-ffffff, #181a1b);
+}
+
+.theme-switcher {
+  position: absolute;
+  top: map.get($spacing, md);
+  right: map.get($spacing, md);
+}
+
+.content-container {
+  @include flex(column);
+  padding: map.get($spacing, xxl) map.get($spacing, md);
+  max-width: $page-max-width;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: map.get($font-sizes, title);
+  font-weight: 300;
+  color: $color-primary;
+  margin-bottom: map.get($spacing, md);
+  font-family: $font-title;
+}
+
+.subtitle {
+  font-size: map.get($font-sizes, subtitle);
+  font-weight: 300;
+  color: $color-secondary;
+  margin-bottom: map.get($spacing, lg);
+}
+
+.date {
+  font-size: map.get($font-sizes, date);
+  font-family: $font-title;
+  color: $color-text-dark;
+  margin-bottom: map.get($spacing, xl);
+}
+
+.event-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: map.get($spacing, lg);
+  margin-bottom: map.get($spacing, xxl);
+}
+
+.event-card {
+  background-color: $color-event-card-bg-light;
+  border-top: 1px solid rgb(55 181 101 / 25%);
+  padding: map.get($spacing, md-l);
+  border-radius: map.get($radiuses, md);
+  box-shadow: $shadow-card;
+  h2 {
+    font-size: map.get($font-sizes, subtitle-lg);
+    font-family: $font-title;
+    color: $color-primary;
+    margin-bottom: map.get($spacing, md);
+    text-align: center;
+    margin-top: 0;
   }
+  p,
+  ul,
   a {
-    color: var(--darkreader-text-0040ff, #3391ff);
+    color: $color-text-dark;
   }
+}
 
-  ::placeholder {
-    color: var(--darkreader-text-a9a9a9, #b2aba1);
-  }
-  * {
-    scrollbar-color: var(--darkreader-background-b0b0b0, #454a4d)
-      var(--darkreader-background-f1f1f1, #202324);
-  }
+.time-span {
+  width: 2.2rem;
+  display: inline-block;
+}
 
-  /* Modified CSS */
+.contact-us,
+.about-wedding {
+  color: $color-text-dark; // Updated from $color-date
+  text-align: center;
+  line-height: 1.5;
+}
+
+a {
+  color: $color-text-dark; // Updated from $color-date
+}
+
+h3 {
+  font-weight: 400;
+  color: $color-text-dark; // Updated from $color-date
+}
+
+.heart-emoji {
+  font-size: map.get($font-sizes, subtitle-lg);
+}
+
+.about-wedding {
+  max-width: $about-text-max-width;
+  margin-bottom: map.get($spacing, xl);
+  margin-right: map.get($spacing, md);
+  margin-left: map.get($spacing, md);
+}
+
+.or {
+  font-size: map.get($font-sizes, dialog-button);
+  opacity: 0.8;
+}
+
+@media (min-width: $breakpoint-md) {
+  .spacer.top {
+    height: $top-spacer-height;
+  }
   .title {
-    color: var(--darkreader-text-047857, #7afbd6) !important;
+    font-size: map.get($font-sizes, title-xl);
   }
   .subtitle {
-    color: var(--darkreader-text-059669, #65facc) !important;
+    font-size: map.get($font-sizes, subtitle-mobile);
+    font-weight: 400;
   }
   .date {
-    color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
+    font-size: map.get($font-sizes, date-lg);
   }
-  .event-card {
-    background-color: var(
-      --darkreader-background-ffffffb3,
-      rgba(24, 26, 27, 0.7)
-    ) !important;
-    box-shadow: var(--darkreader-background-0000001a, rgba(0, 0, 0, 0.1)) 0px
-      4px 6px -1px !important;
-    border-top: 1px solid rgba(101, 250, 203, 0.05);
-    color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
-
-    h2 {
-      color: var(--darkreader-text-047857, #7afbd6) !important;
-    }
-    p,
-    ul,
-    a {
-      color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
-    }
-  }
-
-  a {
-    color: white;
-  }
-
-  .about-wedding,
-  h3,
-  .contact-us {
-    color: var(--darkreader-text-064e3b, rgb(227, 226, 223)) !important;
-    a {
-      color: var(--darkreader-text-064e3b, #e8e6e3) !important;
-    }
-  }
-  label,
-  .label,
-  .dash {
-    color: #7afbd6;
-  }
-
-  .button {
-    background-color: var(--darkreader-background-047857, #036046) !important;
-    border-color: initial;
-    border-style: none;
-    border-width: initial;
-    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
-
-    &.secondary {
-      background-color: transparent !important;
-    }
-  }
-
-  .button:hover {
-    background-color: var(--darkreader-background-065f46, #054c38) !important;
-  }
-  .leaf:nth-child(2n + 1) {
-    color: var(--darkreader-text-37b565, #59cd83) !important;
-  }
-  .leaf:nth-child(2n) {
-    color: var(--darkreader-text-4ade80, #55e088) !important;
-  }
-  .background-gradient {
-    background-color: initial;
-    background-image: linear-gradient(
-      var(--darkreader-background-ecfdf5, #063a27),
-      var(--darkreader-background-ffffff, #181a1b) 70%
-    ) !important;
-  }
-  .particle {
-    background-color: var(--darkreader-background-a1e1c0, #1e5f46) !important;
-  }
-
-  .leaves-container {
-    background: radial-gradient(
-      ellipse at top center,
-      rgba(255, 255, 255, 0.07) 0%,
-      rgba(0, 0, 0, 0) 30%
-    );
-    background-repeat: no-repeat;
-  }
-
-  .dialog {
-    background: #222 !important;
-    color: #fff !important;
-  }
-
-  .contact-form textarea,
-  .contact-form input {
-    background: #333;
-    color: #fff;
-    border: 1px solid #444;
+  .event-cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

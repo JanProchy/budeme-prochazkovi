@@ -1,9 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, input, output, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  output,
+  signal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-contact-dialog',
   imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `<div
       class="dialog-backdrop"
       *ngIf="opened()"
@@ -25,13 +32,18 @@ import { Component, computed, input, output, signal } from '@angular/core';
             </p>
 
             <div class="input">
-              <label> Váš vzkaz:</label>
-              <textarea name="message" required rows="6"></textarea>
+              <label for="message"> Váš vzkaz:</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="6"
+              ></textarea>
             </div>
 
             <div class="input">
-              <label> Vaše jméno:</label>
-              <input name="name" required maxlength="50" />
+              <label for="name"> Vaše jméno:</label>
+              <input id="name" name="name" required maxlength="50" />
             </div>
 
             <div class="buttons">

@@ -19,7 +19,6 @@ interface Leaf {
 
 @Component({
   selector: 'app-wedding-background',
-  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `

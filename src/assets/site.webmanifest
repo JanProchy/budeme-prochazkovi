@@ -1,19 +1,17 @@
 {
   "name": "Budeme Prochazkovi",
   "short_name": "budeme-prochazkovi",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ],
-  "theme_color": "#047857",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "gcm_sender_id": "103953800507",
+  "theme_color": "#047857"
 }

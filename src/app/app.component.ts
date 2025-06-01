@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { LightDarkSwitcherComponent } from './light-dark-switcher/light-dark-switcher.component';
 import { WeddingBackgroundComponent } from './wedding-background/wedding-background.component';
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
+import { FcmService } from './services/fcm.service';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,7 @@ export class AppComponent implements AfterViewInit {
 
   dialogOpen = signal(false);
 
-  constructor() {
+  constructor(private fcmService: FcmService) {
     afterEveryRender(() => {
       if (window.matchMedia && this.themeDetected() === false) {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -48,6 +49,7 @@ export class AppComponent implements AfterViewInit {
       "%cHezky! Zajdi za námi na svatbě s kódem 'IDDQD' a dostaneš panáka zdarma!",
       style
     );
+    this.fcmService.requestPermissionAndGetToken();
   }
 
   ngAfterViewInit(): void {

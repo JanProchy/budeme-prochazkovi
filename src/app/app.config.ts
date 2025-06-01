@@ -1,6 +1,7 @@
 import {
   ApplicationConfig,
-  provideZonelessChangeDetection, isDevMode,
+  provideZonelessChangeDetection,
+  isDevMode,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -17,9 +18,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideMessaging(() => getMessaging()), provideServiceWorker('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            registrationStrategy: 'registerWhenStable:30000'
-          }),
+    provideMessaging(() => getMessaging()),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: true,
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
 };

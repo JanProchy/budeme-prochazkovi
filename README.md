@@ -1,6 +1,6 @@
 # Budeme Procházkovi
 
-![Angular](https://img.shields.io/badge/Angular-20.0.0-red?logo=angular)  [![Netlify Status](https://api.netlify.com/api/v1/badges/14e3a8cc-4003-438a-bca5-d40f9301d10f/deploy-status)](https://app.netlify.com/projects/budeme-prochazkovi/deploys) ![Lighthouse Performance](https://budemeprochazkovi.cz/assets/lighthouse_performance.svg) ![Lighthouse Accessibility](https://budemeprochazkovi.cz/assets/lighthouse_accessibility.svg) ![Lighthouse Best Practices](https://budemeprochazkovi.cz/assets/lighthouse_best-practices.svg) ![Lighthouse SEO](https://budemeprochazkovi.cz/assets/lighthouse_seo.svg)
+![Angular](https://img.shields.io/badge/Angular-20.0.0-red?logo=angular)  [![Netlify Status](https://api.netlify.com/api/v1/badges/14e3a8cc-4003-438a-bca5-d40f9301d10f/deploy-status)](https://app.netlify.com/projects/budeme-prochazkovi/deploys) 
 
 A modern wedding website built with Angular.
 
@@ -8,18 +8,23 @@ A modern wedding website built with Angular.
 
 **Budeme Procházkovi** is a wedding web application designed to provide guests with all the important information about the wedding day. It features a beautiful, responsive design and is optimized for both desktop and mobile devices.
 
+## 🚨 Lighthouse results
+![Lighthouse Performance](https://budemeprochazkovi.cz/assets/lighthouse_performance.svg) ![Lighthouse Accessibility](https://budemeprochazkovi.cz/assets/lighthouse_accessibility.svg) ![Lighthouse Best Practices](https://budemeprochazkovi.cz/assets/lighthouse_best-practices.svg) ![Lighthouse SEO](https://budemeprochazkovi.cz/assets/lighthouse_seo.svg)
+
 ## 🚀 Features
 
 - Elegant, mobile-friendly UI
 - Guest information and RSVP
 - Social media sharing (Open Graph & Twitter meta tags)
 - Google Analytics integration
+- Two hidden easter eggs to get free shots at the wedding
 - Deployed with Netlify
 
 ## 🛠️ Tech Stack
 
 - [Angular 20](https://angular.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [SASS](https://sass-lang.com/)
 - [Netlify](https://www.netlify.com/) for deployment
 
 ## 📦 Project Structure

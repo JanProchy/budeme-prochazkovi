@@ -13,5 +13,6 @@
     }
   ],
   "gcm_sender_id": "103953800507",
-  "theme_color": "#047857"
+  "theme_color": "#047857",
+  "background_color": "#047857"
 }

@@ -1,59 +1,103 @@
-# BudemeProchazkovi
+# Budeme Procházkovi
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+![Angular](https://img.shields.io/badge/Angular-20.0.0-red?logo=angular)  [![Netlify Status](https://api.netlify.com/api/v1/badges/14e3a8cc-4003-438a-bca5-d40f9301d10f/deploy-status)](https://app.netlify.com/projects/budeme-prochazkovi/deploys)
 
-## Development server
+A modern wedding website built with Angular.
 
-To start a local development server, run:
+## 🌸 About
 
-```bash
-ng serve
+**Budeme Procházkovi** is a wedding web application designed to provide guests with all the important information about the wedding day. It features a beautiful, responsive design and is optimized for both desktop and mobile devices.
+
+## 🚀 Features
+
+- Elegant, mobile-friendly UI
+- Guest information and RSVP
+- Social media sharing (Open Graph & Twitter meta tags)
+- Google Analytics integration
+- Deployed with Netlify
+
+## 🛠️ Tech Stack
+
+- [Angular 20](https://angular.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Netlify](https://www.netlify.com/) for deployment
+
+## 📦 Project Structure
+
+```
+.
+├── src/
+│   ├── app/                # Angular components & modules
+│   ├── assets/             # Images and static assets
+│   ├── index.html          # Main HTML file with meta tags
+│   └── styles.scss         # Global styles
+├── public/                 # Public assets
+├── .netlify/               # Netlify configuration
+├── package.json            # Project dependencies & scripts
+├── angular.json            # Angular workspace config
+└── README.md               # Project documentation
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🧑‍💻 Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Angular CLI](https://angular.dev/tools/cli) (`npm install -g @angular/cli`)
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Installation
 
 ```bash
-ng generate --help
+git clone https://github.com/your-username/budeme-prochazkovi.git
+cd budeme-prochazkovi
+npm install
 ```
 
-## Building
+### Development Server
 
-To build the project run:
+Start the local dev server:
 
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Open [http://localhost:4200](http://localhost:4200) in your browser.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Building for Production
 
 ```bash
-ng test
+npm run build
 ```
 
-## Running end-to-end tests
+The build artifacts will be stored in the `dist/` directory.
 
-For end-to-end (e2e) testing, run:
+### Running Unit Tests
 
 ```bash
-ng e2e
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Deploying
 
-## Additional Resources
+Deploy to Netlify (requires [Netlify CLI](https://docs.netlify.com/cli/get-started/)):
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run deploy
+```
+
+## 📄 Meta Tags & SEO
+
+The site includes Open Graph and Twitter meta tags for rich link previews.  
+Google Analytics is enabled via [gtag.js](https://developers.google.com/analytics/devguides/collection/gtagjs).
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## 📃 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ for our wedding.

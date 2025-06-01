@@ -13,7 +13,7 @@ body {
   font-family: $font-main;
   font-size: map.get($font-sizes, base);
   background: $color-bg-gradient;
-  min-height: 100vh;
+  // min-height: 100vh;
 }
 
 .content-container {

@@ -94,6 +94,8 @@
 
 .background-gradient {
   position: fixed;
+  width: 100vw;
+  height: 100dvh;
   inset: 0;
   background: $color-bg-gradient;
   background-repeat: no-repeat;

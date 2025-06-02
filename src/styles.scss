@@ -12,8 +12,11 @@ body {
   padding: 0;
   font-family: $font-main;
   font-size: map.get($font-sizes, base);
-  background: $color-bg-gradient;
   min-height: 100vh;
+}
+
+body {
+  background: $color-bg-gradient;
 }
 
 .content-container {
